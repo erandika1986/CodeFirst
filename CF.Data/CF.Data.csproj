@@ -48,5 +48,14 @@
       <Name>CF.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Configuration\" />
+    <Folder Include="Contract\RepositoryInterface\" />
+    <Folder Include="Contract\Uow\" />
+    <Folder Include="Data\" />
+    <Folder Include="Initialize\" />
+    <Folder Include="Provider\" />
+    <Folder Include="Repository\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
