@@ -21,5 +21,18 @@ namespace CF.Model
 
         public virtual User CreatedBy { get; set; }
         public virtual User UpdatedBy { get; set; }
+
+        #region  Navigation Properties for Account Schema
+
+        public virtual ICollection<Role> CreatedRoles { get; set; }
+        public virtual ICollection<Role> UpdatedRoles { get; set; }
+
+        public virtual ICollection<User> CreatedUsers { get; set; }
+        public virtual ICollection<User> UpdatedUsers { get; set; }
+
+        public virtual ICollection<UserRole> CreatedUserRoles { get; set; }
+        public virtual ICollection<UserRole> UpdatedUserRoles { get; set; }
+
+        #endregion
     }
 }

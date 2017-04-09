@@ -30,7 +30,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -40,7 +53,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\DbFieldLength.cs" />
+    <Compile Include="Common\DbSchemaName.cs" />
+    <Compile Include="Configuration\Account\RoleConfiguration.cs" />
+    <Compile Include="Configuration\Account\UserClaimConfiguration.cs" />
+    <Compile Include="Configuration\Account\UserConfiguration.cs" />
+    <Compile Include="Configuration\Account\UserLoginConfiguration.cs" />
+    <Compile Include="Configuration\Account\UserRoleConfiguration.cs" />
+    <Compile Include="Contract\Interface\IRepositoryProvider.cs" />
+    <Compile Include="Contract\IRepository\Account\IUserRepository.cs" />
+    <Compile Include="Contract\IRepository\Account\IUserRoleRepository.cs" />
+    <Compile Include="Contract\IRepository\IRepository.cs" />
+    <Compile Include="Contract\IUow\ISLIAUow.cs" />
+    <Compile Include="Data\MyDbContext.cs" />
+    <Compile Include="Data\CFUow.cs" />
+    <Compile Include="Initialize\Default\DefaultInitializer.cs" />
+    <Compile Include="Initialize\MyDbInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\CustomRoleStore.cs" />
+    <Compile Include="Provider\CustomUserStore.cs" />
+    <Compile Include="Provider\RepositoryFactories.cs" />
+    <Compile Include="Provider\RepositoryProvider.cs" />
+    <Compile Include="Repository\Account\UserRepository.cs" />
+    <Compile Include="Repository\Repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CF.Model\CF.Model.csproj">
@@ -49,13 +84,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Configuration\" />
-    <Folder Include="Contract\RepositoryInterface\" />
-    <Folder Include="Contract\Uow\" />
-    <Folder Include="Data\" />
-    <Folder Include="Initialize\" />
-    <Folder Include="Provider\" />
-    <Folder Include="Repository\" />
+    <Folder Include="Configuration\Transaction\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
