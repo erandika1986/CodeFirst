@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CF.Data
 {
-    internal interface IUserRepository : IRepository<User>
+    public interface IUserRepository : IRepository<User>
     {
         User GetByUserName(string userName);
         User GetByFirstName(string firstName);

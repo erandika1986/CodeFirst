@@ -65,7 +65,7 @@
     <Compile Include="Contract\IRepository\Account\IUserRepository.cs" />
     <Compile Include="Contract\IRepository\Account\IUserRoleRepository.cs" />
     <Compile Include="Contract\IRepository\IRepository.cs" />
-    <Compile Include="Contract\IUow\ISLIAUow.cs" />
+    <Compile Include="Contract\IUow\ICFUow.cs" />
     <Compile Include="Data\MyDbContext.cs" />
     <Compile Include="Data\CFUow.cs" />
     <Compile Include="Initialize\Default\DefaultInitializer.cs" />

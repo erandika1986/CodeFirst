@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CF.Data
 {
-    internal interface IRoleRepository : IRepository<Role>
+    public  interface IRoleRepository : IRepository<Role>
     {
 
     }

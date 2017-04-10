@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CF.Data
 {
-    interface ISLIAUow : IDisposable
+    public interface ICFUow : IDisposable
     {
         void Commit();
         Task<int> CommitAsync();
@@ -19,7 +19,7 @@ namespace CF.Data
         void DisableBulkInsert();
 
         IUserRepository Users { get; }
-        IRepository<Role> Roles { get; }
+        IRoleRepository Roles { get; }
         IUserRoleRepository UserRoles { get; }
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CF.Data
 {
-    internal interface IUserRoleRepository : IRepository<UserRole>
+    public interface IUserRoleRepository : IRepository<UserRole>
     {
         List<UserRole> GetUserRoles();
         List<UserRole> GetUserRolesByUserId(long UserId);

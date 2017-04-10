@@ -53,5 +53,10 @@ namespace CF.Data
         }
 
         #endregion
+
+        public static MyDbContext Create()
+        {
+            return new MyDbContext();
+        }
     }
 }
