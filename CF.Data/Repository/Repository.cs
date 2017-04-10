@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,69 +22,103 @@ namespace CF.Data.Repository
         protected DbSet<T> DbSet { get; private set; }
 
 
-        public void Add(T entity)
+        public virtual IQueryable<T> GetAll()
         {
-            throw new NotImplementedException();
+            return DbSet;
         }
 
-        public void DeAttached(T entity)
+        public virtual T GetById(long id)
         {
-            throw new NotImplementedException();
+            return DbSet.Find(id);
         }
 
-        public void Delete(T entity)
+        public virtual Task<T> GetByIdAsync(long id)
         {
-            throw new NotImplementedException();
+            return DbSet.FindAsync(id);
         }
 
-        public void Delete(long id)
+        public virtual T GetById(string id)
         {
-            throw new NotImplementedException();
+            return DbSet.Find(id);
         }
 
-        public void Delete(string id)
+        public virtual Task<T> GetByIdAsync(string id)
         {
-            throw new NotImplementedException();
+            return DbSet.FindAsync(id);
         }
 
-        public Task DeleteAsync(long id)
+        public virtual void Add(T entity)
         {
-            throw new NotImplementedException();
+            DbEntityEntry dbEntityEntry = DbContext.Entry(entity);
+            if (dbEntityEntry.State != EntityState.Detached)
+            {
+                dbEntityEntry.State = EntityState.Added;
+            }
+            else
+            {
+                DbSet.Add(entity);
+            }
         }
 
-        public Task DeleteAsync(string id)
+        public virtual void DeAttached(T entity)
         {
-            throw new NotImplementedException();
+            DbContext.Entry(entity).State = EntityState.Detached;
         }
 
-        public IQueryable<T> GetAll()
+        public virtual void Update(T entity)
         {
-            throw new NotImplementedException();
+            DbEntityEntry dbEntityEntry = DbContext.Entry(entity);
+            if (dbEntityEntry.State == EntityState.Detached)
+            {
+                DbSet.Attach(entity);
+            }
+            dbEntityEntry.State = EntityState.Modified;
         }
 
-        public T GetById(long id)
+        public virtual void Delete(T entity)
         {
-            throw new NotImplementedException();
+            DbEntityEntry dbEntityEntry = DbContext.Entry(entity);
+            if (dbEntityEntry.State != EntityState.Deleted)
+            {
+                dbEntityEntry.State = EntityState.Deleted;
+            }
+            else
+            {
+                DbSet.Attach(entity);
+                DbSet.Remove(entity);
+            }
         }
 
-        public T GetById(string id)
+        public virtual void Delete(long id)
         {
-            throw new NotImplementedException();
+            var entity = GetById(id);
+            if (entity == null) return;
+            Delete(entity);
         }
 
-        public Task<T> GetByIdAsync(long id)
+        public virtual async Task DeleteAsync(long id)
         {
-            throw new NotImplementedException();
+            var entity = await GetByIdAsync(id);
+            if (entity != null)
+            {
+                Delete(entity);
+            }
         }
 
-        public Task<T> GetByIdAsync(string id)
+        public virtual void Delete(string id)
         {
-            throw new NotImplementedException();
+            var entity = GetById(id);
+            if (entity == null) return;
+            Delete(entity);
         }
 
-        public void Update(T entity)
+        public virtual async Task DeleteAsync(string id)
         {
-            throw new NotImplementedException();
+            var entity = await GetByIdAsync(id);
+            if (entity != null)
+            {
+                Delete(entity);
+            }
         }
     }
 }

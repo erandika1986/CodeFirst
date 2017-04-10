@@ -32,40 +32,8 @@ namespace CF.Data
             return new Dictionary<Type, Func<DbContext, object>>
             {
                 { typeof(IUserRepository), (dbContext)=> new UserRepository(dbContext)},
-                //{ typeof(IPaperTemplateRepository),(dbContext)=>new PaperTemplateRepository(dbContext)},
-                //{ typeof(ISectionTemplateRepository),(dbContext)=>new SectionTemplateRepository(dbContext)},
-                //{ typeof(IExamRepository),(dbContext)=>new ExamRepository(dbContext)},
-                //{ typeof(IPaperRepository),(dbContext)=>new PaperRepository(dbContext)},
-                //{ typeof(ISectionRepository),(dbContext)=>new SectionRepository(dbContext)},
-                //{ typeof(IQuestionSetRepository),(dbContext)=>new QuestionSetRepository(dbContext)},
-                //{ typeof(IQuestionRepository),(dbContext)=>new QuestionRepository(dbContext)},
-                //{ typeof(IQuestionTopicRepository),(dbContext)=>new QuestionTopicRepository(dbContext)},
-                //{ typeof(IQuestionMainSkillRepository),(dbContext)=>new QuestionMainSkillRepository(dbContext)},
-                //{ typeof(IQuestionSubSkillRepository),(dbContext)=>new QuestionSubSkillRepository(dbContext)},
-                //{ typeof(IClassRepository),(dbContext)=>new ClassRepository(dbContext)},
-                //{ typeof(IUserRoleRepository),(dbContext)=>new UserRoleRepository(dbContext)},
-                //{ typeof(IAcademicLevelRepository),(dbContext)=>new AcademicLevelRepository(dbContext)},
-                //{ typeof(IAssessmentTypeRepository),(dbContext)=>new AssessmentTypeRepository(dbContext)},
-                //{ typeof(IClassNameRepository),(dbContext)=>new ClassNameRepository(dbContext)},
-                //{ typeof(ISubjectRepository),(dbContext)=>new SubjectRepository(dbContext)},
-                //{ typeof(IExamApprovalRepository),(dbContext)=>new ExamApprovalRepository(dbContext)},
-                //{ typeof(IAcademicYearRepository),(dbContext)=>new AcademicYearRepository(dbContext)},
-                //{ typeof(ITopicRepository),(dbContext)=>new TopicRepository(dbContext)},
-                //{ typeof(IAssessmentTypeAcademicLevelRepository),(dbContext)=>new AssessmentTypeAcademicLevelRepository(dbContext)},
-                //{ typeof(IMainSkillRepository),(dbContext)=>new MainSkillRepository(dbContext)},
-                //{ typeof(ISubSkillRepository),(dbContext)=>new SubSkillRepository(dbContext)},
-                //{ typeof(IStudentRepository),(dbContext)=>new StudentRepository(dbContext)},
-                //{ typeof(IStudentClassRepository),(dbContext)=>new StudentClassRepository(dbContext)},
-                //{typeof(IStudentPaperResultRepository),(dbContext)=>new StudentPaperResultRepository(dbContext)},
-                //{typeof(IStudentQuestionResultRepository),(dbContext)=>new StudentQuestionResultRepository(dbContext)},
-                //{typeof(IHeadOfDepartmentRepository),(dbContext)=>new HeadOfDepartmentRepository(dbContext)},
-                //{typeof(IClassTeacherRepository),(dbContext)=>new ClassTeacherRepository(dbContext)},
-                //{typeof(ISubjectTeacherRepository),(dbContext)=>new SubjectTeacherRepository(dbContext)},
-                //{typeof(IExamSetterRepository),(dbContext)=>new ExamSetterRepository(dbContext)},
-                //{typeof(ILockingDateRepository),(dbContext)=>new LockingDateRepository(dbContext)},
-                //{typeof(IVirtualClassRepository),(dbContext)=>new VirtualClassRepository(dbContext)},
-                //{typeof(IVirtualClassStudentRepository),(dbContext)=>new VirtualClassStudentRepository(dbContext)},
-                //{typeof(ICoCurricularAttainmentRepository),(dbContext)=>new CoCurricularAttainmentRepository(dbContext)}
+                { typeof(IUserRoleRepository),(dbContext)=>new UserRoleRepository(dbContext)},
+                { typeof(IRoleRepository),(dbContext)=>new RoleRepository(dbContext)}
             };
         }
 

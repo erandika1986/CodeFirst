@@ -61,6 +61,7 @@
     <Compile Include="Configuration\Account\UserLoginConfiguration.cs" />
     <Compile Include="Configuration\Account\UserRoleConfiguration.cs" />
     <Compile Include="Contract\Interface\IRepositoryProvider.cs" />
+    <Compile Include="Contract\IRepository\Account\IRoleRespository.cs" />
     <Compile Include="Contract\IRepository\Account\IUserRepository.cs" />
     <Compile Include="Contract\IRepository\Account\IUserRoleRepository.cs" />
     <Compile Include="Contract\IRepository\IRepository.cs" />
@@ -74,7 +75,9 @@
     <Compile Include="Provider\CustomUserStore.cs" />
     <Compile Include="Provider\RepositoryFactories.cs" />
     <Compile Include="Provider\RepositoryProvider.cs" />
+    <Compile Include="Repository\Account\RoleRepository.cs" />
     <Compile Include="Repository\Account\UserRepository.cs" />
+    <Compile Include="Repository\Account\UserRoleRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
   </ItemGroup>
   <ItemGroup>
