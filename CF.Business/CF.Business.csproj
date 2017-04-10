@@ -51,8 +51,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\Email\EmailConstant.cs" />
     <Compile Include="Common\Email\EmailMessage.cs" />
     <Compile Include="Common\Email\SMTPEmailManager.cs" />
+    <Compile Include="Common\Enum\ManageMessageId.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

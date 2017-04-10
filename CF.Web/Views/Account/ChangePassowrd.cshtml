@@ -1,0 +1,30 @@
+﻿@using CF.ViewModel.Account;
+@using Microsoft.AspNet.Identity;
+@{
+    ViewBag.Title = "Change Password";
+}
+
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        @if (ViewBag.HasLocalPassword)
+        {
+            @Html.Partial("_ChangePasswordPartial")
+        }
+        else
+        {
+            @Html.Partial("_SetPasswordPartial")
+        }
+
+        @*<section id="externalLogins">
+            @Html.Action("RemoveAccountList")
+            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { Action = "LinkLogin", ReturnUrl = ViewBag.ReturnUrl })
+        </section>*@
+    </div>
+</div>
+<div class="text-center">
+    <p class="text-success"><b>@ViewBag.StatusMessage</b></p>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

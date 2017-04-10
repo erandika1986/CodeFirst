@@ -10,6 +10,7 @@ namespace CF.Web.Controllers
     public class HomeController : Controller
     {
         private ICFUow uow;
+
         public HomeController(ICFUow uow)
         {
             this.uow = uow;
