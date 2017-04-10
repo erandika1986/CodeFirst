@@ -13,7 +13,7 @@ namespace CF.Data.Configuration
         internal UserLoginConfiguration()
         {
             ToTable("UserLogin", DbSchemaName.ACCOUNT);
-            //HasKey(e => new { e.UserId, e.LoginProvider, e.ProviderKey });
+            HasKey(e => new { e.UserId, e.LoginProvider, e.ProviderKey });
         }
     }
 }

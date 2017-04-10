@@ -34,7 +34,7 @@ namespace CF.Data
 
         #region  Account Entities
 
-        ///public DbSet<UserRole> UserRoles { get; set; }
+        public DbSet<UserRole> UserRoles { get; set; }
 
         #endregion
 

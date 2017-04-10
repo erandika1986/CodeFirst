@@ -1,5 +1,6 @@
 ﻿using CF.Data;
 using CF.Model;
+using CF.Web.App_Start;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
@@ -11,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace CF.Web.App_Start
+namespace CF.Web
 {
     public partial class Startup
     {
